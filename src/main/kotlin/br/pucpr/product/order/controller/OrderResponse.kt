@@ -6,12 +6,12 @@ import br.pucpr.product.orderProduct.OrderProduct
 
 data class OrderResponse(
     val id: Long,
-    val orderNumber: String,
+    val orderDescription: String,
     val products: List<OrderProductResponse>
 ) {
     constructor(order: Order) : this(
         order.id!!,
-        order.orderNumber,
+        order.orderDescription,
         order.products.map { OrderProductResponse(it) }
     )
 }

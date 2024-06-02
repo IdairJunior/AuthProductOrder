@@ -28,6 +28,7 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/users")
 class UserController(val service: UserService) {
+
     @PostMapping
     fun insert(@Valid @RequestBody user: CreateUserRequest) =
         UserResponse(service.insert(user.toUser()))

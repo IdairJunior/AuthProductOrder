@@ -16,7 +16,7 @@ class OrderProduct(
     val id: Long? = null,
 
     @ManyToOne
-    @JoinColumn(name = "product_id", nullable = false)
+    @JoinColumn(name = "product_id", nullable = false, )
     val product: Product,
 
     @ManyToOne

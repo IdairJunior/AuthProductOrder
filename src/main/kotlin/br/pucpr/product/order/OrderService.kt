@@ -17,7 +17,7 @@ class OrderService(private val orderRepository: OrderRepository) {
     fun updateOrder(id: Long, updatedOrder: Order): Order? {
         val existingOrder = findById(id)
         return existingOrder?.let {
-            it.orderNumber = updatedOrder.orderNumber
+            it.orderDescription = updatedOrder.orderDescription
             orderRepository.save(it)
         }
     }
@@ -31,6 +31,8 @@ class OrderService(private val orderRepository: OrderRepository) {
         order.products.add(orderProduct)
         return orderRepository.save(order)
     }
+
+
 
     fun removeProductFromOrder(order: Order, productId: Long): Order {
         order.products.removeIf { it.product.id == productId }

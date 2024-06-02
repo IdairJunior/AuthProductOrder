@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/roles")
-@SecurityRequirement(name = "AuthServer")
+@SecurityRequirement(name = "Product")
 @PreAuthorize("hasRole('ADMIN')")
 class RoleController(val service: RoleService) {
     @PostMapping
